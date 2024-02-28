@@ -16,7 +16,6 @@
                 x:Name="CounterBtn"
                 Text="Create new" 
                 SemanticProperties.Hint="Create new reminder"
-                Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
