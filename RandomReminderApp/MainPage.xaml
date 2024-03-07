@@ -9,22 +9,26 @@
         Spacing="25">
 
         <Label Text="Reminders:"
-               Style="{StaticResource Headline}"
-               SemanticProperties.HeadingLevel="Level1" />
+       Style="{StaticResource Headline}"
+       SemanticProperties.HeadingLevel="Level1" />
 
         <CollectionView>
             <CollectionView.ItemsSource>
                 <x:Array Type="{x:Type model:Reminder}">
-                    <model:Reminder Name="Mindfulness Exercise 1"/>
-                    <model:Reminder Name="Mindfulness Exercise 2"/>
-                    <model:Reminder Name="Mindfulness Exercise 3"/>
+                    <model:Reminder Name="Mindfulness Exercise 1"
+                                    Description="A body scan is a mindfulness exercise that involves mentally scanning your body from head to toe."/>
+                    <model:Reminder Name="Mindfulness Exercise 2"
+                                    Description="What am I doing right now? Am I in the present moment?"/>
+                    <model:Reminder Name="Mindfulness Exercise 3"
+                                    Description="Mindful Immersion can help you let go of pressures and demands and cultivate happiness and peace in the moment."/>
                 </x:Array>
             </CollectionView.ItemsSource>
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Reminder">
                     <HorizontalStackLayout>
-                        <Label Text="{Binding Name}"/>
+                        <Label Text="{Binding Name}" FontSize="24"/>
+                        <Label Text="{Binding Description}" FontSize="10"/>
                     </HorizontalStackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
