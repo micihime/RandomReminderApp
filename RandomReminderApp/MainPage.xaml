@@ -8,10 +8,6 @@
         Padding="30,0"
         Spacing="25">
 
-        <Label Text="Reminders:"
-       Style="{StaticResource Headline}"
-       SemanticProperties.HeadingLevel="Level1" />
-
         <CollectionView>
             <CollectionView.ItemsSource>
                 <x:Array Type="{x:Type model:Reminder}">
