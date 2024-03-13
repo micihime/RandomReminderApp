@@ -15,6 +15,19 @@
                     <Label Text="No reminders yet"/>
                 </StackLayout>
             </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Reminder">
+                    <HorizontalStackLayout Padding="10">
+                        <Label Text="{Binding Name}" FontSize="24" VerticalOptions="Center"/>
+
+                        <VerticalStackLayout Padding="10" Spacing="4" VerticalOptions="Center">
+                            <Label Text="{Binding From}" FontSize="12"/>
+                            <Label Text="{Binding To}" FontSize="12"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
         </CollectionView>
 
         <Button Text="Create new" 
