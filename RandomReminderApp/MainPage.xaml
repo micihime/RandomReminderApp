@@ -2,36 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:RandomReminderApp.Models"
+             xmlns:viewmodel="clr-namespace:RandomReminderApp.ViewModels"
              x:Class="RandomReminderApp.MainPage">
 
     <VerticalStackLayout 
         Padding="30,0"
         Spacing="25">
 
-        <CollectionView>
-            <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type model:Reminder}">
-                    <model:Reminder Name="Mindfulness Exercise 1"
-                                    Description="A body scan is a mindfulness exercise that involves mentally scanning your body from head to toe."/>
-                    <model:Reminder Name="Mindfulness Exercise 2"
-                                    Description="What am I doing right now? Am I in the present moment?"/>
-                    <model:Reminder Name="Mindfulness Exercise 3"
-                                    Description="Mindful Immersion can help you let go of pressures and demands and cultivate happiness and peace in the moment."/>
-                </x:Array>
-            </CollectionView.ItemsSource>
-
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Reminder">
-                    <HorizontalStackLayout Padding="10">
-                        <Label Text="{Binding Name}" FontSize="24" VerticalOptions="Center"/>
-
-                        <VerticalStackLayout Padding="10" Spacing="4" VerticalOptions="Center">
-                            <Label Text="{Binding From}" FontSize="12"/>
-                            <Label Text="{Binding To}" FontSize="12"/>
-                        </VerticalStackLayout>
-                    </HorizontalStackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
+        <CollectionView ItemsSource="{Binding Reminders}">
+            <CollectionView.EmptyView>
+                <StackLayout>
+                    <Label Text="No reminders yet"/>
+                </StackLayout>
+            </CollectionView.EmptyView>
         </CollectionView>
 
         <Button Text="Create new" 

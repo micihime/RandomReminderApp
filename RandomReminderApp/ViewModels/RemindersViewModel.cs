@@ -1,5 +1,4 @@
 ﻿using RandomReminderApp.Models;
-using RandomReminderApp.Services;
 using System.Collections.ObjectModel;
 
 namespace RandomReminderApp.ViewModels

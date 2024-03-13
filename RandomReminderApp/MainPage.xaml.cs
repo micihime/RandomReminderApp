@@ -1,10 +1,13 @@
-﻿namespace RandomReminderApp
+﻿using RandomReminderApp.ViewModels;
+
+namespace RandomReminderApp
 {
     public partial class MainPage : ContentPage
     {
-        public MainPage()
+        public MainPage(RemindersViewModel vm)
         {
             InitializeComponent();
+            BindingContext = vm;
         }
     }
 }
