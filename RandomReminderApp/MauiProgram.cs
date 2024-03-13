@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using RandomReminderApp.Services;
 using RandomReminderApp.ViewModels;
 
 namespace RandomReminderApp
@@ -15,6 +16,8 @@ namespace RandomReminderApp
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+
+            builder.Services.AddSingleton<ReminderService>();
 
             builder.Services.AddSingleton<MainPage>();
 
