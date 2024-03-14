@@ -24,6 +24,7 @@ namespace RandomReminderApp
             builder.Services.AddTransient<AddPage>();
 
             builder.Services.AddSingleton<RemindersViewModel>();
+            builder.Services.AddTransient<AddViewModel>();
 
 #if DEBUG
             builder.Logging.AddDebug();
