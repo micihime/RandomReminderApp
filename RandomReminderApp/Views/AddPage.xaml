@@ -7,7 +7,7 @@
              x:DataType="viewmodel:AddViewModel">
 
     <VerticalStackLayout>
-        <Label Text="{Binding Text}"
+        <Label Text="{Binding Reminder.Name}"
                VerticalOptions="Center"
                HorizontalOptions="Center" />
 
