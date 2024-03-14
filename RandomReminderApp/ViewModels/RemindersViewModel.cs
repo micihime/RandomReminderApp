@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using RandomReminderApp.Models;
 using RandomReminderApp.Services;
+using RandomReminderApp.Views;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
@@ -38,11 +39,18 @@ namespace RandomReminderApp.ViewModels
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
+                //await Shell.Current.DisplayAlert("Error!", $"Unable to get reminders: {ex.Message}", "OK");
             }
             finally
             {
                 IsBusy = false;
             }
+        }
+
+        [RelayCommand]
+        async Task CreateNew()
+        {
+            await Shell.Current.GoToAsync($"{nameof(AddPage)}");
         }
     }
 }

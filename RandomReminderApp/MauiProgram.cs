@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using RandomReminderApp.Services;
 using RandomReminderApp.ViewModels;
+using RandomReminderApp.Views;
 
 namespace RandomReminderApp
 {
@@ -20,6 +21,7 @@ namespace RandomReminderApp
             builder.Services.AddSingleton<ReminderService>();
 
             builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddTransient<AddPage>();
 
             builder.Services.AddSingleton<RemindersViewModel>();
 

@@ -32,7 +32,8 @@
 
         <Button Text="Create new" 
                 SemanticProperties.Hint="Create new reminder"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Fill" 
+                Command="{Binding CreateNewCommand}"/>
     </VerticalStackLayout>
 
 </ContentPage>
