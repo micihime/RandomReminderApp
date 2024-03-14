@@ -20,5 +20,10 @@ namespace RandomReminderApp.Services
         {
             return Reminders;
         }
+
+        public void AddReminder(Reminder reminder)
+        {
+            Reminders.Add(reminder);
+        }
     }
 }
