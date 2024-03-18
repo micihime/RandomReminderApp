@@ -38,7 +38,9 @@
                Text="{Binding Reminder.To}"
                VerticalOptions="Center"
                HorizontalOptions="Center" />
-                
+
+        <Button Text="Add"
+                Command="{Binding AddCommand}"/>
         <Button Text="Go Back"
                 Command="{Binding GoBackCommand}"/>
     </VerticalStackLayout>

@@ -15,6 +15,12 @@ namespace RandomReminderApp.ViewModels
         }
 
         [RelayCommand]
+        async Task Add()
+        {
+            await Shell.Current.GoToAsync("..");
+        }
+
+        [RelayCommand]
         async Task GoBackAsync()
         {
             await Shell.Current.GoToAsync("..");
