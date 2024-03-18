@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RandomReminderApp.Models;
+using RandomReminderApp.Services;
 
 namespace RandomReminderApp.ViewModels
 {
@@ -9,14 +10,19 @@ namespace RandomReminderApp.ViewModels
         [ObservableProperty]
         Reminder reminder;
 
-        public AddViewModel()
+        ReminderService reminderService;
+
+        public AddViewModel(ReminderService reminderService)
         {
+            this.reminderService = reminderService;
             reminder = new Reminder();
         }
 
         [RelayCommand]
         async Task Add()
         {
+            reminderService.AddReminder(Reminder);
+
             await Shell.Current.GoToAsync("..");
         }
 
