@@ -17,10 +17,10 @@ namespace RandomReminderApp.ViewModels
         {
             Title = "Reminders";
             this.reminderService = reminderService;
-            LoadMonkeys();
+            LoadReminders();
         }
 
-        void LoadMonkeys()
+        void LoadReminders()
         {
             if (IsBusy)
                 return;

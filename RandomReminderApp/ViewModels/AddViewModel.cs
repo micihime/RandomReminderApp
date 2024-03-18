@@ -22,7 +22,6 @@ namespace RandomReminderApp.ViewModels
         async Task Add()
         {
             reminderService.AddReminder(Reminder);
-
             await Shell.Current.GoToAsync("..");
         }
 
