@@ -7,10 +7,22 @@
              x:DataType="viewmodel:AddViewModel">
 
     <VerticalStackLayout>
-        <Label Text="{Binding Reminder.Name}"
-               VerticalOptions="Center"
-               HorizontalOptions="Center" />
+        <Label Text="Name" />
+        <Entry Placeholder="Enter task" 
+               Text="{Binding Reminder.Name}" />
 
+        <Label Text="Description" />
+        <Entry Placeholder="Enter description" 
+               Text="{Binding Reminder.Description}" />
+
+        <Label Text="Remind me from" />
+        <Entry Placeholder="Enter time" 
+               Text="{Binding Reminder.From}" />
+
+        <Label Text="Remind me until" />
+        <Entry Placeholder="Enter time" 
+               Text="{Binding Reminder.To}" />
+                
         <Button Text="Go Back"
                 Command="{Binding GoBackCommand}"/>
     </VerticalStackLayout>

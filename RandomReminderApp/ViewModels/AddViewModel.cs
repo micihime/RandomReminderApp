@@ -11,10 +11,7 @@ namespace RandomReminderApp.ViewModels
 
         public AddViewModel()
         {
-            reminder = new Reminder()
-            {
-                Name = "testing viewmodel binding"
-            };
+            reminder = new Reminder();
         }
 
         [RelayCommand]
