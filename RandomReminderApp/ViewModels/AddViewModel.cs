@@ -20,7 +20,7 @@ namespace RandomReminderApp.ViewModels
         }
 
         [RelayCommand]
-        async Task Add()
+        async Task AddAsync()
         {
             reminderService.AddReminder(Reminder);
             await Shell.Current.GoToAsync("..");
