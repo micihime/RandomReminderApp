@@ -52,5 +52,11 @@ namespace RandomReminderApp.ViewModels
         {
             await Shell.Current.GoToAsync($"{nameof(AddPage)}");
         }
+
+        [RelayCommand]
+        void Refresh()
+        {
+            LoadReminders();
+        }
     }
 }
