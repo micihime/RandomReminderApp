@@ -8,6 +8,7 @@ namespace RandomReminderApp
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(AddPage), typeof(AddPage));
+            Routing.RegisterRoute(nameof(DetailsPage), typeof(DetailsPage));
         }
     }
 }

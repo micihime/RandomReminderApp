@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using RandomReminderApp.Models;
 using RandomReminderApp.Services;
 using RandomReminderApp.Views;
@@ -57,6 +58,19 @@ namespace RandomReminderApp.ViewModels
         void Refresh()
         {
             LoadReminders();
+        }
+
+        [RelayCommand]
+        async Task GoToDetailsAsync(Reminder reminder)
+        {
+            if (reminder is null)
+                return;
+
+            await Shell.Current.GoToAsync($"{nameof(DetailsPage)}", true,
+                new Dictionary<string, object>
+                {
+                    { "Reminder", reminder }
+                });
         }
     }
 }

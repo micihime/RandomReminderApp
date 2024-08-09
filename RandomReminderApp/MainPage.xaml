@@ -8,7 +8,7 @@
     <VerticalStackLayout 
         Padding="30,0"
         Spacing="25">
-
+        
         <CollectionView ItemsSource="{Binding Reminders}">
             <CollectionView.EmptyView>
                 <StackLayout>
@@ -18,26 +18,31 @@
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Reminder">
-                    <HorizontalStackLayout Padding="10">
-                        <Label Text="{Binding Name}" FontSize="24" VerticalOptions="Center"/>
+                    <Frame HeightRequest="125"
+                        Padding="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:RemindersViewModel}}, Path=GoToDetailsCommand}" 
+                                CommandParameter="{Binding .}"/>
+                        </Frame.GestureRecognizers>
+                        <HorizontalStackLayout Padding="10">
+                            <Label Text="{Binding Name}" FontSize="24" VerticalOptions="Center"/>
 
-                        <VerticalStackLayout Padding="10" Spacing="4" VerticalOptions="Center">
-                            <Label Text="{Binding From}" FontSize="12"/>
-                            <Label Text="{Binding To}" FontSize="12"/>
-                        </VerticalStackLayout>
-                    </HorizontalStackLayout>
+                            <VerticalStackLayout Padding="10" Spacing="4" VerticalOptions="Center">
+                                <Label Text="{Binding From}" FontSize="12"/>
+                                <Label Text="{Binding To}" FontSize="12"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Frame>
+
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
+        
         <Button Text="Create new" 
                 SemanticProperties.Hint="Create new reminder"
                 HorizontalOptions="Fill" 
                 Command="{Binding CreateNewCommand}"/>
-        <Button Text="Refresh" 
-                SemanticProperties.Hint="Refresh reminder list"
-                HorizontalOptions="Fill" 
-                Command="{Binding RefreshCommand}"/>
     </VerticalStackLayout>
 
 </ContentPage>
