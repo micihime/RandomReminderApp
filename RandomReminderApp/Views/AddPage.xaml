@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RandomReminderApp.Views.AddPage"
-             Title="AddPage"
+             Title="Add New Reminder"
              xmlns:viewmodel="clr-namespace:RandomReminderApp.ViewModels"
              x:DataType="viewmodel:AddViewModel">
 
@@ -39,9 +39,17 @@
                VerticalOptions="Center"
                HorizontalOptions="Center" />
 
-        <Button Text="Add"
-                Command="{Binding AddCommand}"/>
-        <Button Text="Go Back"
-                Command="{Binding GoBackCommand}"/>
+        <VerticalStackLayout
+            Padding="30,30"
+            Spacing="25">
+            <Button Text="Add"
+                    SemanticProperties.Hint="Create new reminder"
+                    HorizontalOptions="Fill"
+                    Command="{Binding AddCommand}"/>
+            <Button Text="Go Back"
+                    SemanticProperties.Hint="Create new reminder"
+                    HorizontalOptions="Fill"
+                    Command="{Binding GoBackCommand}"/>
+        </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
