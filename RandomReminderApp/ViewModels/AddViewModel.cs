@@ -14,6 +14,7 @@ namespace RandomReminderApp.ViewModels
 
         public AddViewModel(ReminderService reminderService)
         {
+            Title = "Add New Reminder";
             this.reminderService = reminderService;
             reminder = new Reminder();
         }
