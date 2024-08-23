@@ -4,17 +4,17 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <Color x:Key="Primary">#FFC107</Color>
-    <Color x:Key="PrimaryDark">#FFA000</Color>
-    <Color x:Key="Accent">#00BCD4</Color>
+    <Color x:Key="Primary">#7FBF99</Color>
+    <Color x:Key="PrimaryDark">#A9DFBF</Color>
+    <Color x:Key="Accent">#F9E2D2</Color>
 
     <Color x:Key="LightBackground">#FAF9F8</Color>
     <Color x:Key="DarkBackground">Black</Color>
 
     <Color x:Key="LabelText">#1F1F1F</Color>
-    <Color x:Key="LabelTextDark">White</Color>
+    <Color x:Key="LabelTextDark">#FAF9F8</Color>
 
-    <Color x:Key="CardBackground">White</Color>
+    <Color x:Key="CardBackground">#FAF9F8</Color>
     <Color x:Key="CardBackgroundDark">#1C1C1E</Color>
 
     <Style TargetType="Page" ApplyToDerivedTypes="True">
@@ -54,9 +54,9 @@
     </Style>
 
     <Style x:Key="ButtonOutline" TargetType="Button">
-        <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}"/>
-        <Setter Property="TextColor" Value="{StaticResource Primary}"/>
-        <Setter Property="BorderColor" Value="{StaticResource Primary}"/>
+        <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LabelTextDark}, Dark={StaticResource LabelText}}"/>
+        <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}"/>
         <Setter Property="BorderWidth" Value="2"/>
         <Setter Property="HeightRequest" Value="40"/>
         <Setter Property="CornerRadius" Value="20"/>
