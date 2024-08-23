@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
-using MonkeyFinder.Services;
-using MonkeyFinder.ViewModel;
-using MonkeyFinder.View;
+using Randy.Services;
+using Randy.ViewModel;
+using Randy.View;
 
-namespace MonkeyFinder
+namespace Randy
 {
     public static class MauiProgram
     {
@@ -17,18 +17,14 @@ namespace MonkeyFinder
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
-
-            builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
-            builder.Services.AddSingleton<IGeolocation>(Geolocation.Default);
-            builder.Services.AddSingleton<IMap>(Map.Default);
             
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddTransient<DetailsPage>();
 
-            builder.Services.AddSingleton<MonkeyService>();
+            builder.Services.AddSingleton<ReminderService>();
             
-            builder.Services.AddSingleton<MonkeysViewModel>();
-            builder.Services.AddTransient<MonkeyDetailsViewModel>();
+            builder.Services.AddSingleton<RemindersViewModel>();
+            builder.Services.AddTransient<ReminderDetailsViewModel>();
 
 #if DEBUG
     		builder.Logging.AddDebug();

@@ -1,10 +1,10 @@
-﻿using MonkeyFinder.ViewModel;
+﻿using Randy.ViewModel;
 
-namespace MonkeyFinder.View;
+namespace Randy.View;
 
 public partial class MainPage : ContentPage
 {
-	public MainPage(MonkeysViewModel vm)
+	public MainPage(RemindersViewModel vm)
 	{
 		InitializeComponent();
 		BindingContext = vm;

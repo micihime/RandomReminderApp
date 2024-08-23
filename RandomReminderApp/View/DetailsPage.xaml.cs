@@ -1,10 +1,10 @@
-using MonkeyFinder.ViewModel;
+using Randy.ViewModel;
 
-namespace MonkeyFinder;
+namespace Randy;
 
 public partial class DetailsPage : ContentPage
 {
-	public DetailsPage(MonkeyDetailsViewModel vm)
+	public DetailsPage(ReminderDetailsViewModel vm)
 	{
 		InitializeComponent();
 		BindingContext = vm;

@@ -1,5 +1,5 @@
 ﻿using Foundation;
-using MonkeyFinder;
+using Randy;
 
 namespace RandomReminderApp
 {

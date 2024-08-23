@@ -1,8 +1,8 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace MonkeyFinder.Model;
+namespace Randy.Model;
 
-public class Monkey
+public class Reminder
 {
     public int Id { get; set; }
     public string Name { get; set; }
@@ -17,10 +17,4 @@ public class Monkey
     //public int Population { get; set; }
     //public double Latitude { get; set; }
     //public double Longitude { get; set; }
-}
-
-[JsonSerializable(typeof(List<Monkey>))]
-internal sealed partial class MonkeyContext : JsonSerializerContext
-{
-
 }

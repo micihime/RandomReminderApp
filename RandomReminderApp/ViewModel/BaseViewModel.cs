@@ -1,5 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-namespace MonkeyFinder.ViewModel;
+namespace Randy.ViewModel;
 
 public partial class BaseViewModel : ObservableObject
 {
