@@ -41,16 +41,17 @@
                                 </Frame.GestureRecognizers>
                                 <Grid Padding="0"
                                   ColumnDefinitions="125,*">
-                                    <!--<Image Aspect="AspectFill"
-                                   Source="{Binding Image}"
-                                   WidthRequest="125"
-                                   HeightRequest="125"/>-->
-
+                                    <VerticalStackLayout Grid.Column="0"
+                                        Padding="10"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="Center">
+                                        <Label Text="{Binding From}" HorizontalOptions="End" Style="{StaticResource LargeLabel}"/>
+                                        <Label Text="{Binding To}" HorizontalOptions="End" Style="{StaticResource LargeLabel}"/>
+                                    </VerticalStackLayout>
                                     <VerticalStackLayout Grid.Column="1"
                                                      Padding="10"
                                                      VerticalOptions="Center">
                                         <Label Text="{Binding Name}" Style="{StaticResource LargeLabel}"/>
-                                        <Label Text="{Binding Description}" Style="{StaticResource MediumLabel}"/>
                                     </VerticalStackLayout>
                                 </Grid>
                             </Frame>
@@ -60,16 +61,16 @@
             </CollectionView>
         </RefreshView>
 
-        <Button Text="Get Monkeys" 
+        <Button Text="Refresh" 
                 Style="{StaticResource ButtonOutline}"
                 Command="{Binding GetMonkeysCommand}"
                 IsEnabled="{Binding IsNotBusy}"
                 Grid.Row="1"
                 Margin="8"/>
 
-        <!--<Button Text="Find Closest" 
+        <!--<Button Text="Add" 
                 Style="{StaticResource ButtonOutline}"
-                Command="{Binding GetClosestMonkeyCommand}"
+                Command="{Binding AddNewCommand}"
                 IsEnabled="{Binding IsNotBusy}"
                 Grid.Row="1"
                 Grid.Column="1"
