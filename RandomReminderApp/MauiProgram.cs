@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
-using RandomReminderApp.Services;
-using RandomReminderApp.ViewModels;
-using RandomReminderApp.Views;
+using MonkeyFinder.Services;
+using MonkeyFinder.ViewModel;
+using MonkeyFinder.View;
 
-namespace RandomReminderApp
+namespace MonkeyFinder
 {
     public static class MauiProgram
     {
@@ -18,16 +18,20 @@ namespace RandomReminderApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            builder.Services.AddSingleton<ReminderService>();
-
+            builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
+            builder.Services.AddSingleton<IGeolocation>(Geolocation.Default);
+            builder.Services.AddSingleton<IMap>(Map.Default);
+            
             builder.Services.AddSingleton<MainPage>();
-            builder.Services.AddTransient<AddPage>();
+            builder.Services.AddTransient<DetailsPage>();
 
-            builder.Services.AddSingleton<RemindersViewModel>();
-            builder.Services.AddTransient<AddViewModel>();
+            builder.Services.AddSingleton<MonkeyService>();
+            
+            builder.Services.AddSingleton<MonkeysViewModel>();
+            builder.Services.AddTransient<MonkeyDetailsViewModel>();
 
 #if DEBUG
-            builder.Logging.AddDebug();
+    		builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

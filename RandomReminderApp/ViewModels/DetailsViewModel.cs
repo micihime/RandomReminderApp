@@ -17,6 +17,7 @@ namespace RandomReminderApp.ViewModels
         [RelayCommand]
         async Task GoBackAsync()
         {
+            var a = reminder.Name;
             await Shell.Current.GoToAsync("..");
         }
     }

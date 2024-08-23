@@ -1,4 +1,4 @@
-﻿namespace RandomReminderApp
+﻿namespace MonkeyFinder
 {
     public partial class App : Application
     {
