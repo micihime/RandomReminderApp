@@ -24,11 +24,11 @@
                        IsClippedToBounds="True"
                        Padding="0"
                        Margin="0,80,0,0">
-                    <!--<Image Aspect="AspectFill"
+                    <Image Aspect="AspectFill"
                            HeightRequest="160"
                            WidthRequest="160"
                            VerticalOptions="Center"
-                           Source="exercise.png"/>-->
+                           Source="leaf.png"/>
                 </Frame>
             </Grid>
             
