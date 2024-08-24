@@ -22,6 +22,13 @@ public partial class RemindersViewModel : BaseViewModel
         this.reminderService = reminderService;
     }
 
+
+    [RelayCommand]
+    async Task AddNewAsync()
+    {
+        await Shell.Current.GoToAsync($"{nameof(AddPage)}");
+    }
+
     [RelayCommand]
     async Task GoToDetailsAsync(Reminder reminder)
     {

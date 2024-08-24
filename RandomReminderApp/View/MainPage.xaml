@@ -67,14 +67,14 @@
                 IsEnabled="{Binding IsNotBusy}"
                 Grid.Row="1"
                 Margin="8"/>
-
-        <!--<Button Text="Add" 
+        <Button Text="Add New" 
+                SemanticProperties.Hint="Add new reminder"
                 Style="{StaticResource ButtonOutline}"
                 Command="{Binding AddNewCommand}"
                 IsEnabled="{Binding IsNotBusy}"
                 Grid.Row="1"
                 Grid.Column="1"
-                Margin="8"/>-->
+                Margin="8"/>
 
         <ActivityIndicator IsVisible="{Binding IsBusy}"
                            IsRunning="{Binding IsBusy}"

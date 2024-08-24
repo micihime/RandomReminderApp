@@ -1,4 +1,5 @@
 ﻿using Randy.Model;
+using static Microsoft.Maui.ApplicationModel.Permissions;
 
 namespace Randy.Services;
 
@@ -32,5 +33,10 @@ public class ReminderService
         //}
 
         return reminderList;
+    }
+
+    public void AddReminder(Reminder reminder)
+    {
+        reminderList.Add(reminder);
     }
 }
