@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Randy.EditPage"
+             xmlns:viewmodel="clr-namespace:Randy.ViewModel"
+             x:DataType="viewmodel:EditReminderViewModel"
+             Shell.PresentationMode="ModalAnimated"
+             Title="{Binding Reminder.Name}">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid 
+                ColumnDefinitions="*,Auto,*"
+                RowDefinitions="160,Auto">
+
+                <BoxView 
+                    BackgroundColor="{StaticResource Primary}"
+                    Grid.ColumnSpan="3"
+                    HeightRequest="160"
+                    HorizontalOptions="FillAndExpand"/>
+
+                <Frame Grid.RowSpan="2"
+                    Grid.Column="1"
+                    HeightRequest="160"
+                    WidthRequest="160"
+                    CornerRadius="80"
+                    HorizontalOptions="Center"
+                    IsClippedToBounds="True"
+                    Padding="0"
+                    Margin="0,80,0,0">
+
+                    <Image Aspect="AspectFill"
+                       HeightRequest="160"
+                       WidthRequest="160"
+                       VerticalOptions="Center"
+                       Source="leaf.png"/>
+
+                </Frame>
+            </Grid>
+
+            <VerticalStackLayout 
+                Padding="20"
+                Spacing="10">
+
+                <Label 
+                    Text="Name"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center" />
+                <Entry 
+                    Placeholder="Enter a name for your reminder" 
+                    Text="{Binding Reminder.Name}" />
+
+                <!--<Label 
+                    Text="Short Summary" 
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center" />
+                <Entry 
+                    Placeholder="Enter Summary" 
+                    Text="{Binding Reminder.Summary}" />-->
+
+                <Grid 
+                    Padding="0"
+                    ColumnDefinitions="*,*">
+
+                    <VerticalStackLayout
+                        Spacing="10"
+                        Grid.Column="0">
+
+                        <Label 
+                            Text="Remind me From" 
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center" />
+                        <Entry 
+                            Placeholder="Enter time" 
+                            Text="{Binding Reminder.From}"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center" />
+                        
+                    </VerticalStackLayout>
+                    <VerticalStackLayout
+                        Grid.Column="1">
+
+                        <Label 
+                            Text="Remind me Until" 
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center" />
+                        <Entry 
+                            Placeholder="Enter time" 
+                            Text="{Binding Reminder.To}"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center" />
+
+                    </VerticalStackLayout>
+                </Grid>            
+
+                <Label 
+                    Text="Description" 
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center" />
+                <Entry 
+                    Placeholder="Enter description" 
+                    Text="{Binding Reminder.Description}" />
+
+                <Button Text="Go Back" 
+                    Style="{StaticResource ButtonOutline}"
+                    Command="{Binding GoBackCommand}"
+                    IsEnabled="{Binding IsNotBusy}"
+                    HorizontalOptions="Center"
+                    WidthRequest="200"
+                    Grid.Row="1"
+                    Margin="8"/>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

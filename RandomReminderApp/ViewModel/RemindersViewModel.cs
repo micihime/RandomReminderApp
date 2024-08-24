@@ -42,6 +42,20 @@ public partial class RemindersViewModel : BaseViewModel
             });
     }
 
+
+    [RelayCommand]
+    async Task GoToEditAsync(Reminder reminder)
+    {
+        if (reminder is null)
+            return;
+
+        await Shell.Current.GoToAsync($"{nameof(EditPage)}", true,
+            new Dictionary<string, object>
+            {
+                { "Reminder", reminder }
+            });
+    }
+
     [RelayCommand]
     async Task GetRemindersAsync()
     {

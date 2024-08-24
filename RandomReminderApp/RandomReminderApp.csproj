@@ -64,12 +64,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="View\EditPage.xaml.cs">
+	    <DependentUpon>EditPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="View\AddPage.xaml.cs">
 	    <DependentUpon>AddPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="View\EditPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\AddPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

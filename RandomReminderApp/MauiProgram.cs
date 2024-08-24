@@ -21,12 +21,14 @@ namespace Randy
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddTransient<DetailsPage>();
             builder.Services.AddTransient<AddPage>();
+            builder.Services.AddTransient<EditPage>();
 
             builder.Services.AddSingleton<ReminderService>();
             
             builder.Services.AddSingleton<RemindersViewModel>();
-            builder.Services.AddSingleton<AddReminderViewModel>();
             builder.Services.AddTransient<ReminderDetailsViewModel>();
+            builder.Services.AddSingleton<AddReminderViewModel>();
+            builder.Services.AddSingleton<EditReminderViewModel>();
 
 #if DEBUG
     		builder.Logging.AddDebug();
