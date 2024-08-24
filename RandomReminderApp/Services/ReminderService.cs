@@ -39,4 +39,17 @@ public class ReminderService
     {
         reminderList.Add(reminder);
     }
+
+    public void EditReminder(Reminder reminder)
+    {
+        var remonderToEdit = reminderList.Where(x => x.Id == reminder.Id).FirstOrDefault();
+        if (remonderToEdit != null)
+        {
+            remonderToEdit.Name = reminder.Name;
+            //remonderToEdit.Summary = reminder.Summary;
+            remonderToEdit.Description = reminder.Description;
+            remonderToEdit.From = reminder.From;
+            remonderToEdit.To = reminder.To;
+        }
+    }
 }
