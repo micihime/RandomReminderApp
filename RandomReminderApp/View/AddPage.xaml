@@ -101,6 +101,14 @@
                     Placeholder="Enter description" 
                     Text="{Binding Reminder.Description}" />
 
+                <Button Text="Save" 
+                    Style="{StaticResource ButtonOutline}"
+                    Command="{Binding SaveCommand}"
+                    IsEnabled="{Binding IsNotBusy}"
+                    HorizontalOptions="Center"
+                    WidthRequest="200"
+                    Grid.Row="1"
+                    Margin="8"/>
                 <Button Text="Go Back" 
                     Style="{StaticResource ButtonOutline}"
                     Command="{Binding GoBackCommand}"

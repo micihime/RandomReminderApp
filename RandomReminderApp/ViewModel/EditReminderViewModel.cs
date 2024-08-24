@@ -23,7 +23,7 @@ public partial class EditReminderViewModel : BaseViewModel
     [RelayCommand]
     async Task SaveAsync()
     {
-        //reminderService.EditReminder(Reminder);
+        reminderService.EditReminder(Reminder);
         await Shell.Current.GoToAsync("..");
     }
 

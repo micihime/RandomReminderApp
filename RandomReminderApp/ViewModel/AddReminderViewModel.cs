@@ -20,7 +20,7 @@ public partial class AddReminderViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    async Task AddAsync()
+    async Task SaveAsync()
     {
         reminderService.AddReminder(Reminder);
         await Shell.Current.GoToAsync("..");
