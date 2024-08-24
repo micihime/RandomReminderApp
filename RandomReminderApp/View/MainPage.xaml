@@ -15,7 +15,7 @@
         <RefreshView Grid.ColumnSpan="2"
                      Command="{Binding GetRemindersCommand}"
                      IsRefreshing="{Binding IsRefreshing}">
-            <CollectionView ItemsSource="{Binding Monkeys}"
+            <CollectionView ItemsSource="{Binding Reminders}"
                         SelectionMode="None">
                 <CollectionView.EmptyView>
                     <StackLayout VerticalOptions="Center"

@@ -11,7 +11,7 @@ public partial class RemindersViewModel : BaseViewModel
 {
     ReminderService reminderService;
 
-    public ObservableCollection<Reminder> Monkeys { get; } = new();
+    public ObservableCollection<Reminder> Reminders { get; } = new();
 
     [ObservableProperty]
     bool isRefreshing;
@@ -61,11 +61,11 @@ public partial class RemindersViewModel : BaseViewModel
             IsBusy = true;
             var reminders = await reminderService.GetReminders();
 
-            if (Monkeys.Count != 0)
-                Monkeys.Clear();
+            if (Reminders.Count != 0)
+                Reminders.Clear();
 
             foreach (var reminder in reminders)
-                Monkeys.Add(reminder);
+                Reminders.Add(reminder);
         }
         catch (Exception ex)
         {
