@@ -50,13 +50,13 @@
                     Placeholder="Enter a name for your reminder" 
                     Text="{Binding Reminder.Name}" />
 
-                <!--<Label 
+                <Label 
                     Text="Short Summary" 
                     VerticalOptions="Center"
                     HorizontalOptions="Center" />
                 <Entry 
                     Placeholder="Enter Summary" 
-                    Text="{Binding Reminder.Summary}" />-->
+                    Text="{Binding Reminder.Summary}" />
 
                 <Grid 
                     Padding="0"

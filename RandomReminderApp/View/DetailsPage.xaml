@@ -38,8 +38,8 @@
                 <Label Text="{Binding Reminder.Name}"
                        Style="{StaticResource LargeLabel}"
                        HorizontalTextAlignment="Center"/>
-                <!--<Label Text="{Binding Reminder.Summary}"
-                        Style="{StaticResource MediumLabel}"/>-->
+                <Label Text="{Binding Reminder.Summary}"
+                        Style="{StaticResource MediumLabel}"/>
                 <Grid Padding="0"
                     ColumnDefinitions="100,120,*">
                     <VerticalStackLayout 
