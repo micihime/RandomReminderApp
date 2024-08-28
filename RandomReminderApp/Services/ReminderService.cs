@@ -20,7 +20,7 @@ public class ReminderService
         //httpClient = new HttpClient();
     }
 
-    public async Task<List<Reminder>> GetReminders()
+    public List<Reminder> GetReminders()
     {
         //if (reminderList?.Count > 0)
         //    return reminderList;
