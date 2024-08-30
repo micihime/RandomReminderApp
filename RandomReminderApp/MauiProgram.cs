@@ -2,6 +2,7 @@
 using Randy.Services;
 using Randy.ViewModel;
 using Randy.View;
+using Plugin.LocalNotification;
 
 namespace Randy
 {
@@ -16,8 +17,9 @@ namespace Randy
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
-            
+                })
+                .UseLocalNotification();
+
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddTransient<DetailsPage>();
             builder.Services.AddTransient<AddPage>();
