@@ -73,7 +73,7 @@ public partial class RemindersViewModel : BaseViewModel
             //}
 
             IsBusy = true;
-            var reminders = await reminderService.GetReminders();
+            var reminders = reminderService.GetReminders();
 
             if (Reminders.Count != 0)
                 Reminders.Clear();
